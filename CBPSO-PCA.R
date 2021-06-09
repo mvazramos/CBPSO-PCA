@@ -148,16 +148,6 @@ PSO <- function(X,sX=0,Q=Q,n_Par=500,nIter=30,minIner=0.5,maxIner=3.5,wCognition
 
 
 # Q=3
-# library(haven)
-# data <- read_sav("world_24nations_25nov2006.sav")
-# df <- data[,c("self1","self2","self3","self4","self5","self6","self7","self8","self9","self10")]
-# df<-na.omit(df)
-# Result_GSE <- PSO(X=df,sX=1,Q=Q,n_Par=500,nIter=30,minIner=0.3,maxIner=3.0,wCognition=1.5,wSocial=1.5)
-# Result_GSE[[2]]
-# Result_GSE[[4]]
-# sum(Result_GSE[[4]])
-
-
 
 # library(readxl)
 # df <- read_excel("C_XRF_data_2v6_8Feb06.xls", sheet = "Sheet2")
@@ -165,21 +155,3 @@ PSO <- function(X,sX=0,Q=Q,n_Par=500,nIter=30,minIner=0.5,maxIner=3.5,wCognition
 # Result_XRF[[2]]
 # Result_XRF[[4]]
 # sum(Result_XRF[[4]])
-
-
-#df <- read.csv(file = 'dados_Letras.csv',sep=";")
-#df <- dados_Letras
-# Result_Letras <- PSO(X=df,sX=1,Q=Q,n_Par=50,nIter=20,minIner=0.8,maxIner=1.2,wCognition=2,wSocial=2)
-# Result_Letras[[2]]
-# Result_Letras[[4]]
-# sum(Result_Letras[[4]])
-
-
-
-
-
-
-
-
-
-
