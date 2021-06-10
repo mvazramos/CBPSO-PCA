@@ -1,6 +1,6 @@
 # CBPSO-PCA  (An R Implementation)
 
-This implementation resulted from my studies, in my Master's degree dissertation and was based on the paper from Figueroa *et al.*: 
+This implementation resulted from my studies, in my Master's degree dissertation on "Clustering of Variables in High Dimensional Data", and was based on the paper from Figueroa *et al.*: 
 
 *Ramirez-Figueroa, J.A., Martin-Barreiro, C., Nieto-Librero, A. et al. A new principal component analysis by particle swarm optimization with an environmental application for data science. Stoch Environ Res Risk Assess (2021). https://doi.org/10.1007/s00477-020-01961-3*
 
