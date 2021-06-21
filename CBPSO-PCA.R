@@ -1,5 +1,5 @@
 source("CBPSOPCA_functions.R")
-PSO <- function(X,sX=0,Q=Q,n_Par=500,nIter=30,minIner=0.5,maxIner=3.5,wCognition=1.5,wSocial=1.5){
+PSO <- function(X,sX=0,Q=Q,n_Par,nIter=30,minIner=0.5,maxIner=3.5,wCognition=1.5,wSocial=1.5){
   
   I <- dim(X)[1]
   J <- dim(X)[2]
