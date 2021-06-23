@@ -1,5 +1,26 @@
 source("CBPSOPCA_functions.R")
-PSO <- function(X,sX=0,Q=Q,n_Par,nIter=30,minIner=0.5,maxIner=3.5,wCognition=1.5,wSocial=1.5){
+"""
+Parameters:
+  - X: Data matrix.
+  - Xs: 0 if the Standardization is the one used by Macedo and Freitas, 1 if used like in Ramirez-Figueroa et al. and Vigneau and Qannari, 
+        2 if data is only centered.
+  - Q: Number of clusters of variables (disjoint principal components)
+  - nPar: Number of particles in the swarm,
+  - nIter: Maximum number of iterations ( this is the stopping criterion)
+  - minIner: Minimum value of the Inertia function
+  - maxIner: Maximum value of the Inertia function 
+  - wCognition: Cognitive Weight Value (individual behaviour)
+  - wSocial: Social Weight Value (collective behaviour)
+
+Returns a list where:
+  - the first element corresponds to the best V matrix found
+  - the second element corresponds to the corresponding loadings matrix A
+  - the third element corresponds to the value of the fit error
+  - the fourth element corresponds to the value of the variances for each column of A ( in decreasing order)
+  - the fifth element corresponds to the scores matrix Y=XA.
+"""
+
+PSO <- function(X,sX=0,Q,n_Par=300,nIter=30,minIner=0.5,maxIner=3.5,wCognition=1.5,wSocial=1.5){
   
   I <- dim(X)[1]
   J <- dim(X)[2]
@@ -14,7 +35,7 @@ PSO <- function(X,sX=0,Q=Q,n_Par,nIter=30,minIner=0.5,maxIner=3.5,wCognition=1.5
   }
   if(sX==1){
     "
-    Standardization as assumed in Vigneau et al. and Ramirez-Figueroa et al.
+    Standardization as assumed in Vigneau and Qannari, and Ramirez-Figueroa et al.
     "
     X <- scale(X,center=T,scale=T)
     X <- as.matrix(X)
@@ -146,12 +167,16 @@ PSO <- function(X,sX=0,Q=Q,n_Par,nIter=30,minIner=0.5,maxIner=3.5,wCognition=1.5
 }
 
 
+"""
+In this section of the code, the results from Ramirez-Figueora et al. paper were reproduced, for the environmental data
+that is referred in the paper and freely available: http://weppi.gtk.fi/publ/foregsatlas/ForegsData.php ( file C_XRF_data_2v6_8Feb06.xls in the subsoil data)
+The results were successfully reproduced.
+"""
 
 # Q=3
-
 # library(readxl)
 # df <- read_excel("C_XRF_data_2v6_8Feb06.xls", sheet = "Sheet2")
 # Result_XRF<- PSO(X=df,sX=1,Q=Q,n_Par=100,nIter=30,minIner=0.3,maxIner=2.5,wCognition=1.5,wSocial=2.5)
-# Result_XRF[[2]]
-# Result_XRF[[4]]
-# sum(Result_XRF[[4]])
+# Result_XRF[[2]] # Loadings matrix
+# Result_XRF[[4]] # Explained variances by disjoint component (cluster)
+# sum(Result_XRF[[4]]) # Total explained variance
