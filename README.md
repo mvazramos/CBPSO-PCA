@@ -6,7 +6,7 @@ This implementation resulted from my studies, in my Master's degree dissertation
 
 Also available in pre-print in aRxiv.org : *https://arxiv.org/abs/2004.10701*
 
-This algorithm was not designed by me, I merely implemented it in **R**, in order to compare it with other similar algorithms. It is not original work of mine. 
+This algorithm was not designed by me, I merely implemented it in **R**, in order to compare it with other algorithms. It is not original work of mine. 
 
 
 The **functions** used to compute the **random matrices** and to compute the **loading matrices** were not writen by me, they are available in the **biplotbootGUI** package, in the **CDpca** function conde - available at https://CRAN.R-project.org/package=biplotbootGUI.
