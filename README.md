@@ -8,6 +8,7 @@ Also available in pre-print in aRxiv.org : *https://arxiv.org/abs/2004.10701*
 
 This algorithm was not designed by me, I merely implemented it in **R**, in order to compare it with other algorithms. It is not original work of mine. 
 
+The data file used to reproduce the results from the paper is freely availabe in: *http://weppi.gtk.fi/publ/foregsatlas/ForegsData.php*, in the subsoil file section.
 
 The **functions** used to compute the **random matrices** and to compute the **loading matrices** were not writen by me, they are available in the **biplotbootGUI** package, in the **CDpca** function conde - available at https://CRAN.R-project.org/package=biplotbootGUI.
 
