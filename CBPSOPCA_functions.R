@@ -1,4 +1,3 @@
-
 # Fit function
 fitF <- function(A,Xs){
   #F<-sum(diag(t(Xs-Xs%*%A%*%t(A))%*%(Xs-Xs%*%A%*%t(A))))/(sum(diag(t(Xs)%*%Xs)) ) 
@@ -7,8 +6,6 @@ fitF <- function(A,Xs){
   
   return(F)
 }
-
-
 
 
 RandMat <- function(J, Q) {
@@ -91,13 +88,6 @@ compute_A <- function(I,J,Q,V,Xs){
 }
 
 
-
-
-
-
-
-
-
 ################ General PSO 
 "
 Parameters
@@ -118,14 +108,6 @@ Each Particle is composed by a matrix :
 "
 
 
-
-
-
-
-
-
-
-
 ################################################# Operator to get Valid Solutions 
 randVel <- function(J,Q){
   "
@@ -142,14 +124,6 @@ randVel <- function(J,Q){
   }
   return(Vr)
 }
-
-
-
-
-
-
-
-
 
 
 operatorO <- function(Mat,Vel,J,Q){
