@@ -10,7 +10,7 @@ fitF <- function(A,Xs){
 
 RandMat <- function(J, Q) {
   U0 <- matrix(0, J, Q)
-  ###########################################################Changes made to implement the situation dim1=dim2 
+  
   cc=1
   for ( i in sample(1:Q,Q) ){
     U0[cc,] <- diag(Q)[i,]
@@ -73,7 +73,7 @@ compute_A <- function(I,J,Q,V,Xs){
       }else{
         # CASE 2: I < J ( more variables than observations)
         SS.group <- Xs[, Jxx]%*%t(Xs[, Jxx])         # O que faz isto??  May 7 2021 Question
-        ##          A[Jxx, j] <- t(X.group[, Jxx])%*%eigen(SS.group)$vectors[, 1]/sqrt(eigen(SS.group)$values[1])  #Esta linha do CRAN ? substitu?da pela seguinte:
+        ##          A[Jxx, j] <- t(X.group[, Jxx])%*%eigen(SS.group)$vectors[, 1]/sqrt(eigen(SS.group)$values[1]) 
         PMinitial <- PMlargestEigen(SS.group)
         #PMinitial <- partial_eigen(SS.group,1)
         
@@ -88,27 +88,6 @@ compute_A <- function(I,J,Q,V,Xs){
 }
 
 
-################ General PSO 
-"
-Parameters
-  P: number of particles
-  nIter: number of iterations
-  minIner: minimum of intertia value
-  maxIner: maximum of inertia value
-  wC: cognitive weight
-  wS: social weight
-"
-
-
-
-"
-Each Particle is composed by a matrix :
-  - V:  with de variable configurations   #Position
-  - vel: with the velocities              #Velocity
-"
-
-
-################################################# Operator to get Valid Solutions 
 randVel <- function(J,Q){
   "
   Initiates random velocity matrix with entries between [-1,1]
@@ -157,11 +136,6 @@ operatorL <- function(Mat){
   return(newMat)
 }
 
-#A=operatorO(Mat=randVel(J,Q),J,Q)
-#Vel=A[[1]]
-
-#TestMat = A[[2]]
-#print(TestMat)
 
 checkColZeros <- function(test,Vel){
   "
